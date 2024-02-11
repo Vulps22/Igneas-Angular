@@ -11,4 +11,10 @@ import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 })
 export class LoginComponent {
 
+  showLogin = true;
+
+  toggleForm() {
+    this.showLogin = !this.showLogin;
+  }
+
 }

@@ -8,7 +8,7 @@
 				<h2 class="text-lg font-medium">
 					Login
 				</h2>
-				<a class="md:hidden text-sm text-blue-600 hover:underline" onclick="showRegister()"> Not Registered? </a>
+				<a class="md:hidden text-sm text-blue-600 hover:underline" (click)="showRegisterForm()"> Not Registered? </a>
 			</div>
 
 			<div class="p-6">
@@ -19,13 +19,13 @@
 
 						<div>
 							<label class="block">Email Address</label>
-							<input type="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white pl-5 py-2" required>
+							<input type="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white pl-5 py-2" [(ngModel)]="email">
 
 						</div>
 
 						<div>
 							<label class="block">Password</label>
-							<input type="password" name="password" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white pl-5 py-2" required>
+							<input type="password" name="password" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white pl-5 py-2" [(ngModel)]="password">
 						</div>
 
 						<div class="flex items-center">
@@ -36,7 +36,7 @@
 					</div>
 
 					<div class="mt-4">
-						<button class="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600">Login</button>
+						<button class="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600" (click)="doLogin()">Login</button>
 
 						<a href="" class="text-sm text-blue-600 hover:underline">
 							Forgot password?

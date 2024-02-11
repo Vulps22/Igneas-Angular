@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sign-up-form',
@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './sign-up-form.component.css'
 })
 export class SignUpFormComponent {
+  @Output() willLogin = new EventEmitter<void>();
+
+  showLoginForm() {
+    this.willLogin.emit();
+  }
 
 }
