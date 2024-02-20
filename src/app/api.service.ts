@@ -19,7 +19,10 @@ export class ApiService {
     login: (data: any) => { return this.post('/api/user/login', data) },
     register: (data: any) => { return this.post('/api/user/create', data) },
   };
-  profile = [];
+  profile = {
+    list: () => { return this.get('/api/profile/list') },
+  };
+  
   messenger = [];
 
   private post(url: string, data: any): Observable<ApiResponse> {
@@ -49,7 +52,7 @@ export class ApiService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
-  });
+    });
     return headers
   }
 

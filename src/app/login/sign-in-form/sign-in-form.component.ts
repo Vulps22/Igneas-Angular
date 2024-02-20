@@ -5,6 +5,7 @@ import { ApiResponse } from '../../interfaces/api-response';
 import { CookieService } from 'ngx-cookie-service';
 import { NotificationService } from '../../notification.service';
 import { AuthenticationService } from '../../authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in-form',
@@ -22,7 +23,7 @@ export class SignInFormComponent {
   email = '';
   password = ''
 
-  constructor(private apiService: ApiService, private cookieService: CookieService, private notificationService: NotificationService, private authenticationService: AuthenticationService) { }
+  constructor(private apiService: ApiService, private cookieService: CookieService, private notificationService: NotificationService, private authenticationService: AuthenticationService, private router: Router) { }
 
   showRegisterForm() {
     this.willRegister.emit();
@@ -38,6 +39,7 @@ export class SignInFormComponent {
           if(data.response === 'error') this.notificationService.error('Access Denied', data.data.error);
           else{
             console.log('Success!');
+            this.router.navigate(['home']);
           }
         })
       }

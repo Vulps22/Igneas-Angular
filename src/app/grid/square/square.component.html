@@ -1,0 +1,12 @@
+<a href="/profile/{{ user.user_id }}">
+	<div class="flex h-40 border-1 border-black md:h-60 md:rounded md:border-2 md:border-white" style="background-image: url('{{user.image}}'); background-size: contain; background-repeat: no-repeat; background-position: center;">
+		<div class="flex bg-gradient-to-t from-gray-900 to-transparent w-full h-full">
+			<div class="self-end w-full h-1/4 pl-3">
+				<h3 class="text-small md:text-xl"><span class="w-2/3"></span> {{user.display_name}} {{ user.age ? " | " + user.age : ""}}</h3>
+                @if(user.show_location){
+				    <h4 class="text-xs md:text-base"> {{user.distance}} </h4>
+                }
+			</div>
+		</div>
+	</div>
+</a>

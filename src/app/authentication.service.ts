@@ -9,23 +9,24 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AuthenticationService {
 
-  private isLoggedIn = false;
+  private loggedIn: boolean = false;
 
   constructor(private apiService: ApiService, private cookieService: CookieService) { }
 
   /**
    * retrieve the 'authToken' cookie and send it to apiService.auth.verify. Save the response to user
    */
-  authenticate(token: any | undefined): Observable<ApiResponse> {
+  authenticate(token?: any | undefined): Observable<ApiResponse> {
+    console.log("AUTHENTICATE!");
     if (token) this.setToken(token.token);
     return this.apiService.auth.verify().pipe(
       tap(data => {
         console.log(data);
         if (data.response === 'success') {
-          this.isLoggedIn = true;
+          this.loggedIn = true;
           this.refreshToken();
         } else {
-          this.isLoggedIn = false;
+          this.loggedIn = false;
           this.forgetToken();
         }
       })
@@ -66,6 +67,11 @@ export class AuthenticationService {
 
   }
 
+
+  isLoggedIn(): boolean{
+    console.log("Logged in: ", this.loggedIn);
+    return this.loggedIn;
+  }
 
 
 }
