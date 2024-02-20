@@ -21,12 +21,6 @@ export class AppComponent implements OnInit {
   constructor(private messageService: MessageService, private cookieService: CookieService, private authService: AuthenticationService, private router: Router) { }
 
   ngOnInit(): void {
-    if (this.router.url) {
-      const token = this.cookieService.get('authentication');
-      if (token) this.authService.authenticate(token).subscribe(data => {
-        if (data.response === 'success') this.router.navigate(['/home']);
-      })
-    }
   }
 
   isLoggedIn() {
