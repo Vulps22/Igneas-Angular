@@ -21,6 +21,7 @@ export class ApiService {
   };
   profile = {
     list: () => { return this.get('/api/profile/list') },
+    get: (id: string | number) => { return this.get(`/api/profile/${id}`)}
   };
   
   messenger = [];

@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { ShortUser } from '../../interfaces/short-user';
-
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'grid-square',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './square.component.html',
   styleUrl: './square.component.css'
 })

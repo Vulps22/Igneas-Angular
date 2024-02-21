@@ -2,18 +2,18 @@
 <div class="flex flex-col h-screen bg-neutral-900 text-white">
 
   @if(isLoggedIn()){
-    <app-navbar-member></app-navbar-member>
+  <app-navbar-member></app-navbar-member>
   }
   @else{
-    <app-navbar-guest></app-navbar-guest>
+  <app-navbar-guest></app-navbar-guest>
   }
+  <div class="h-100 overflow-x-scroll">
+    <main class="flex-grow p-4">
+      <router-outlet></router-outlet>
+    </main>
 
-  <main class="flex-grow p-4">
-    <router-outlet></router-outlet>
-  </main>
-
-  <footer class="p-4 text-center text-gray-300">
-    &copy; Dating App 2024
-  </footer>
-
+    <footer class="p-4 text-center text-gray-300">
+      &copy; Dating App 2024
+    </footer>
+  </div>
 </div>
