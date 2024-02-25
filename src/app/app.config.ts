@@ -10,26 +10,16 @@ import { NotificationService } from './notification.service';
 import { ApiService } from './api.service';
 import { AuthenticationService } from './authentication.service';
 import { Observable } from 'rxjs';
-
-export function initializeUserData(apiService: ApiService, authenticationService: AuthenticationService) {
-  console.log('INITIALISE');
-  return (): Observable<any> => authenticationService.authenticate();
-}
+import { NgModel } from '@angular/forms';
 
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideHttpClient(),
-    importProvidersFrom([BrowserAnimationsModule]),
+    importProvidersFrom([BrowserAnimationsModule, NgModel]),
     CookieService,
     MessageService,
     NotificationService,
-    {
-      provide: [APP_INITIALIZER],
-      useFactory: initializeUserData,
-      multi: true,
-      deps: [ApiService, AuthenticationService],
-    },
   ],
 };
