@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@latest
         with:
-          node-version: '16' # Adjust the Node.js version as needed
+          node-version: '20' # Adjust the Node.js version as needed
 
       - name: Install Angular CLI
         run: npm install -g @angular/cli
