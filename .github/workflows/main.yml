@@ -25,7 +25,7 @@ jobs:
         run: npm install -g @angular/cli
 
       - name: Build Angular Application
-        run: ng build --prod
+        run: ng build --configuration production
 
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
