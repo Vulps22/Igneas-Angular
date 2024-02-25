@@ -1,0 +1,225 @@
+<form [formGroup]="profileForm">
+
+	<div class="flex justify-center">
+
+		<div class="md:w-1/2">
+
+			<div class="rounded-lg max-md:border-0 md:border-2 border-neutral-800 p-10 mb-5">
+				<h2 class="text-lg font-bold mb-5">Profile Images</h2>
+
+				<!--- Profile image uploader -->
+				<div class="grid grid-cols-3 gap-4 mt-5">
+					@for (card of [0,1,2,3,4,5]; track $index){
+					<app-profile-editor-photo-card [position]="$index"
+						[url]="$index < images.length ? images[$index].filename : ''" />
+					}
+				</div>
+			</div>
+
+			<div class="md:rounded-lg md:border-2 border-neutral-800 max-md:pl-5 p-10">
+				<!-- UserProfile fields -->
+
+				<div class="grid grid-cols-6 gap-2 pt-2">
+					<label for="display_name">Display Name:</label>
+					<input
+						class="col-span-5 mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white px-2 py-2"
+						type="text" formControlName="display_name">
+				</div>
+
+				<div class="grid grid-cols-6 gap-2 pt-2">
+					<label class="mr-2 max-md:col-span-2" for="bio">Bio:</label>
+					<textarea
+						class="max-md:col-span-4 md:col-span-5 md:col-span-5 mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white col-span-5 px-2 py-2"
+						formControlName="bio"></textarea>
+				</div>
+				<div class="grid grid-cols-6 gap-2 pt-2">
+					<label for="height" class="mr-2 max-md:col-span-2">Height:</label>
+					<div class="max-md:col-span-4 md:col-span-5 flex">
+						<input
+							class="mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white col-span-5 px-2 py-2 md:w-1/6"
+							type="number" formControlName="height">
+						<sub class="ml-2 text-xl">cm</sub>
+					</div>
+				</div>
+				<div class="grid grid-cols-6 gap-2 pt-2">
+					<label class="mr-2 max-md:col-span-2" for="weight">Weight:</label>
+					<div class="max-md:col-span-4 md:col-span-5 flex">
+						<input
+							class="mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white col-span-5 px-2 py-2 md:w-1/6"
+							type="number" formControlName="weight">
+						<sub class="ml-2 text-xl">kg</sub>
+					</div>
+				</div>
+				<div class="grid grid-cols-6 gap-2 pt-2">
+					<label class="mr-2 col-span-2" for="body_type">Body Type:</label>
+					<select
+						class="max-md:col-span-4 md:col-span-5 mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white px-2 py-2"
+						formControlName="body_type">
+						<option value="">Prefer Not To Say</option>
+						<option value="thin">Thin</option>
+						<option value="muscular">Muscular</option>
+						<option value="average">Average</option>
+						<option value="chubby">Chubby</option>
+						<option value="fat">Fat</option>
+					</select>
+				</div>
+				<div class="grid grid-cols-6 gap-2 pt-2">
+					<label for="sexuality" class="max-md:col-span-2">Sexuality:</label>
+					<select
+						class="max-md:col-span-4 md:col-span-5 mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white px-2 py-2"
+						formControlName="sexuality">
+						<option value="">Prefer Not To Say</option>
+						<option value="a-sexual">A-Sexual</option>
+						<option value="bisexual">Bi-Sexual</option>
+						<option value="demi-sexual">Demi-Sexual</option>
+						<option value="gay">Gay</option>
+						<option value="lesbian">lesbian</option>
+						<option value="straight">Straight</option>
+						<option value="pan">Pan-Sexual</option>
+					</select>
+				</div>
+				<div class="grid grid-cols-6 gap-2 pt-2">
+					<label class="mr-2 max-md:col-span-2" for="position">Position:</label>
+					<select
+						class="max-md:col-span-4 md:col-span-5 mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white px-2 py-2"
+						formControlName="position">
+						<option value="">Prefer Not To Say</option>
+						<option value="top">Top</option>
+						<option value="bottom">Bottom</option>
+						<option value="verse">Verse</option>
+						<option value="verse_top">Verse Top</option>
+						<option value="verse_bottom">Verse Bottom</option>
+					</select>
+				</div>
+				<div class="grid grid-cols-6 gap-2 pt-2">
+					<label class="mr-2 max-md:col-span-2" for="dominance">Dominance:</label>
+					<select
+						class="max-md:col-span-4 md:col-span-5 mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white px-2 py-2"
+						formControlName="dominance">
+						<option value="">Prefer Not To Say</option>
+						<option value="dominant">Dom</option>
+						<option value="submissive">sub</option>
+						<option value="switch">Switch</option>
+						<option value="switch_dom">Switch Dom</option>
+						<option value="switch_sub">Switch Sub</option>
+
+					</select>
+				</div>
+				<div class="grid grid-cols-6 gap-2 pt-2">
+					<label class="mr-2 max-md:col-span-2" for="ethnicity">Ethnicity:</label>
+					<select
+						class="max-md:col-span-4 md:col-span-5 mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white px-2 py-2"
+						formControlName="ethnicity">
+						<option value="">Prefer Not To Say</option>
+						<option value="white">White</option>
+						<option value="black">Black</option>
+						<option value="asian">Asian</option>
+						<option value="arabic">Arabic</option>
+						<option value="hispanic">Hispanic</option>
+						<option value="indian">Indian</option>
+						<option value="native_american">Native American</option>
+						<option value="pacific_islander">Pacific Islander</option>
+						<option value="mixed">Mixed</option>
+						<option value="other">Other</option>
+					</select>
+				</div>
+				<div class="grid grid-cols-6 gap-2 pt-2">
+					<label class="mr-2 max-md:col-span-2" for="relationship_status">Relationship Status:</label>
+					<select
+						class="max-md:col-span-4 md:col-span-5 mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white px-2 py-2"
+						formControlName="relationship_status">
+						<option value="">Prefer Not To Say</option>
+						<option value="single">Single</option>
+						<option value="dating">Dating</option>
+						<option value="not_looking">Not Looking</option>
+					</select>
+				</div>
+				<div class="grid grid-cols-6 gap-2 pt-2">
+					<label class="mr-2 max-md:col-span-2" for="looking_for">Looking For:</label>
+					<select
+						class="max-md:col-span-4 md:col-span-5 mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white px-2 py-2"
+						formControlName="looking_for">
+						<option value="">Prefer Not To Say</option>
+						<option value="friends">Friends</option>
+						<option value="relationship">Relationship</option>
+						<option value="right_now">Right Now</option>
+					</select>
+				</div>
+				<div class="grid grid-cols-6 gap-2 pt-2">
+					<label class="mr-2 max-md:col-span-2" for="gender">Gender:</label>
+					<select
+						class="max-md:col-span-4 md:col-span-5 mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white px-2 py-2"
+						formControlName="gender">
+						<option value="">Prefer Not To Say</option>
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+						<option value="trans_male">Trans Male</option>
+						<option value="trans_female">Trans Female</option>
+						<option value="non-binary">Non-binary</option>
+
+
+					</select>
+				</div>
+				<div class="grid grid-cols-6 gap-2 pt-2">
+					<label class="mr-2 max-md:col-span-2" for="pronouns">Pronouns:</label>
+					<select
+						class="max-md:col-span-4 md:col-span-5 mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white px-2 py-2"
+						formControlName="pronouns">
+						<option value="">Prefer Not To Say</option>
+						<option value="he/him">He/Him</option>
+						<option value="she/her">She/Her</option>
+						<option value="they/them">They/Them</option>
+						<option value="ask">Ask Me</option>
+					</select>
+				</div>
+				<div class="grid grid-cols-6 gap-2 pt-2">
+					<label class="mr-2 max-md:col-span-2" for="show_location">Show Location:</label>
+					<input
+						class="mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white px-2 py-2"
+						type="checkbox" formControlName="show_location">
+				</div>
+				<div class="grid grid-cols-6 gap-2 pt-2">
+					<label class="mr-2 max-md:col-span-2" for="show_age">Show Age:</label>
+					<input
+						class="mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white px-2 py-2"
+						type="checkbox" formControlName="show_age">
+				</div>
+			</div>
+			<div class="md:rounded-lg md:border-2 border-neutral-800 max-md:p-5 md:p-10 mt-10" formGroupName="health">
+				<!-- UserHealth fields -->
+				<div class="grid grid-cols-6 gap-2 pt-2">
+					<label for="hiv_status" class="max-md:col-span-2">HIV Status:</label>
+					<select
+						class="max-md:col-span-4 md:col-span-5 mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white px-2 py-2"
+						formControlName="hiv_status">
+						<option value="">Prefer Not To Say</option>
+						<option value="positive">Positive</option>
+						<option value="untraceable">Positive (Untraceable)</option>
+						<option value="negative">Negative</option>
+					</select>
+				</div>
+				<div class="grid grid-cols-6 gap-2 pt-2">
+					<label for="last_STI_test" class="max-md:col-span-2">Last STI Test:</label>
+					<input
+						class="mt-1 max-md:col-span-4 md:col-span-5 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white px-2 py-2"
+						type="date" formControlName="last_test">
+				</div>
+				<div class="grid grid-cols-6 gap-2 pt-2">
+					<label for="on_prep" class="max-md:col-span-2">On PrEP:</label>
+					<input
+						class="mt-1 max-md:col-span-4 md:col-span-5 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white px-2 py-2"
+						type="checkbox" formControlName="on_prep">
+				</div>
+				<div class="grid grid-cols-6 gap-2 pt-2">
+					<label for="show_hiv_status" class="max-md:col-span-2">Show Status:</label>
+					<input
+						class="mt-1 max-md:col-span-4 md:col-span-5 block w-full rounded-md border-gray-300 shadow-sm bg-neutral-800 text-white px-2 py-2"
+						type="checkbox" formControlName="show_hiv_status">
+				</div>
+			</div>
+
+			<button type="submit" class="bg-blue-800 p-2 px-3 mt-3 text-lg rounded" (click)="save()">Save</button>
+
+		</div>
+	</div>
+</form>

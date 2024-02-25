@@ -26,7 +26,7 @@ export class ProfileViewComponent implements OnInit {
       this.userId = Number(data.get('id'));
       this.apiService.profile.get(this.userId).subscribe(data => {
         if(data.response == 'success'){
-          console.log(data.data);
+
           this.userId = data.data.user_id
           this.profile = data.data;
           this.health = data.data.health;
@@ -40,9 +40,9 @@ export class ProfileViewComponent implements OnInit {
   }
 
   getImage() {
-    console.log("getImage: ", this.selectedImage);
-    const image = this.images.find(item => { console.log(item); return item.id == this.selectedImage});
-    console.log(image)
+
+    const image = this.images.find(item => { return item.id == this.selectedImage});
+
     return image.filename;
   }
 

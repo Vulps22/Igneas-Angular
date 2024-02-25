@@ -1,12 +1,12 @@
 <div>
     @if(value != '') {
     <div class="flex flex-row">
-        <div [ngClass]="{'w-1/4': title, 'w-10': !title}">
+        <div [ngClass]="{'w-2/4': title, 'w-10': !title}">
             <i class="fa-solid fa-{{ icon }}"></i>
             <span class="font-bold pr-4 text-neutral-400">{{title}}</span>
         </div>
         <div class="text-left grow">
-            {{value}}
+            {{isDate ? (value | date:'dd MMM yyyy') : value}}
         </div>
     </div>
 }

@@ -11,19 +11,22 @@ export class AuthenticationService {
 
   private loggedIn: boolean = false;
 
+  private userId: number | null = null;
+
   constructor(private apiService: ApiService, private cookieService: CookieService) { }
 
   /**
    * retrieve the 'authToken' cookie and send it to apiService.auth.verify. Save the response to user
    */
   authenticate(token?: any | undefined): Observable<ApiResponse> {
-    console.log("AUTHENTICATE!");
+
     if (token) this.setToken(token.token);
     return this.apiService.auth.verify().pipe(
       tap(data => {
-        console.log(data);
+
         if (data.response === 'success') {
           this.loggedIn = true;
+          this.userId = Number(data.data.id);
           this.refreshToken();
         } else {
           this.loggedIn = false;
@@ -69,8 +72,15 @@ export class AuthenticationService {
 
 
   isLoggedIn(): boolean{
-    console.log("Logged in: ", this.loggedIn);
+
     return this.loggedIn;
+  }
+
+  getUser(){
+    if(!this.userId) this.authenticate().subscribe(data => {
+      console.log(data);
+    })
+    return this.userId;
   }
 
 
