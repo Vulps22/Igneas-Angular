@@ -1,7 +1,7 @@
     // ... environment.ts 
     export const environment = {
         production: true,
-        disableSignUp: false,
+        disableSignUp: true,
         disableSignIn: false,
         disableAuthGuard: false,
         discordUrl: 'https://discord.gg/YQvTBPDxf8',
