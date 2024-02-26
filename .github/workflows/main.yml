@@ -35,4 +35,5 @@ jobs:
           if_key_exists: replace
 
       - name: Upload Application to Ubuntu Server
-        run: scp -i ~/.ssh/id_rsa -r dist/* vulps@161.97.68.166:/var/www/html/igneas-angular
+        run: scp -i ~/.ssh/id_rsa -r dist/igneas/browser/* vulps@161.97.68.166:/var/www/html/igneas-angular/
+
