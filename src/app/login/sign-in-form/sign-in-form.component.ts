@@ -6,6 +6,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { NotificationService } from '../../notification.service';
 import { AuthenticationService } from '../../authentication.service';
 import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-sign-in-form',
@@ -15,6 +16,9 @@ import { Router } from '@angular/router';
   styleUrl: './sign-in-form.component.css'
 })
 export class SignInFormComponent {
+
+  shouldDisable = environment.disableSignIn;
+  discordUrl = environment.discordUrl;
 
 
   @Output() willRegister = new EventEmitter<void>();
@@ -38,7 +42,7 @@ export class SignInFormComponent {
         this.authenticationService.authenticate(data.data).subscribe((data: ApiResponse) => {
           if(data.response === 'error') this.notificationService.error('Access Denied', data.data.error);
           else{
-            console.log('Success!');
+
             this.router.navigate(['home']);
           }
         })

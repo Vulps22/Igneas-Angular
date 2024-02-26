@@ -1,7 +1,10 @@
     // ... environment.ts 
     export const environment = {
-        production: false,
-        serverUrl : 'http://localhost:8000',
+        production: true,
+        disableSignUp: true,
+        disableSignIn: false,
+        discordUrl: 'https://discord.gg/YQvTBPDxf8',
+        serverUrl : 'https://api.igneas.app',
         pusher: {
           key: 'de2c26b5ad67d60e836c',
           cluster: 'eu',

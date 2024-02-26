@@ -1,3 +1,4 @@
+@if (!shouldDisable) {
 <div class="flex justify-center h-full text-white">
 
 	<div class="w-full max-w-md">
@@ -52,3 +53,29 @@
 	</div>
 
 </div>
+} @else {
+	<div class="flex justify-center h-full text-white">
+
+		<div class="w-full max-w-md">
+	
+			<div class="rounded-lg max-md:border-0 md:border-2 border-neutral-800">
+	
+				<div class="flex justify-between px-6 py-4 md:border-b border-neutral-800">
+					<h2 class="text-lg font-medium">
+						Login
+					</h2>
+					<a class="md:hidden text-sm text-blue-600 hover:underline" (click)="showRegisterForm()"> Not Registered? </a>
+				</div>
+	
+				<div class="p-6">
+	
+					<h1 class="text-xl pb-6">Igneas Administrators have disabled Login</h1>
+					<h3>Updates will be made available on <a [href]="discordUrl" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" target="_blank">Discord</a> as soon as we have more information.</h3>	
+				</div>
+	
+			</div>
+	
+		</div>
+	
+	</div>
+}

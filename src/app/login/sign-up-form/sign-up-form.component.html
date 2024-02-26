@@ -1,3 +1,4 @@
+@if (!shouldDisable) {
 <div class="flex justify-center">
 
 	<div class="w-full max-w-md">
@@ -8,7 +9,8 @@
 				<h2 class="text-lg font-medium">
 					Register
 				</h2>
-				<a class="md:hidden text-sm text-blue-600 hover:underline" (click)="showLoginForm()"> Already Registered? </a>
+				<a class="md:hidden text-sm text-blue-600 hover:underline" (click)="showLoginForm()"> Already
+					Registered? </a>
 
 			</div>
 
@@ -20,29 +22,38 @@
 
 						<div>
 							<label class="block ">Email Address</label>
-							<input type="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm  bg-neutral-800 text-white pl-5 py-2" [(ngModel)]="email">
+							<input type="email" name="email"
+								class="mt-1 block w-full rounded-md border-gray-300 shadow-sm  bg-neutral-800 text-white pl-5 py-2"
+								[(ngModel)]="email">
 						</div>
 
 						<div>
 							<label class="block ">Password</label>
-							<input type="password" name="password" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm  bg-neutral-800 text-white pl-5 py-2" [(ngModel)]="password">
+							<input type="password" name="password"
+								class="mt-1 block w-full rounded-md border-gray-300 shadow-sm  bg-neutral-800 text-white pl-5 py-2"
+								[(ngModel)]="password">
 						</div>
 
 						<div>
 							<label class="block ">Confirm Password</label>
-							<input type="password" name="password_confirmation" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm  bg-neutral-800 text-white pl-5 py-2" [(ngModel)]="confirmPassword">
+							<input type="password" name="password_confirmation"
+								class="mt-1 block w-full rounded-md border-gray-300 shadow-sm  bg-neutral-800 text-white pl-5 py-2"
+								[(ngModel)]="confirmPassword">
 						</div>
 
 						<!--date of birth-->
 						<div>
 							<label class="block ">Date of Birth</label>
-							<input type="date" name="dob" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm  bg-neutral-800 text-white pl-5 py-2" [(ngModel)]="dob">
+							<input type="date" name="dob"
+								class="mt-1 block w-full rounded-md border-gray-300 shadow-sm  bg-neutral-800 text-white pl-5 py-2"
+								[(ngModel)]="dob">
 						</div>
 
 					</div>
 
 					<div class="mt-4">
-						<button class="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600" (click)="doRegister()">
+						<button class="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+							(click)="doRegister()">
 							Register
 						</button>
 					</div>
@@ -56,3 +67,36 @@
 	</div>
 
 </div>
+} @else {
+<div class="flex justify-center h-full text-white">
+
+	<div class="w-full max-w-md">
+
+		<div class="rounded-lg max-md:border-0 md:border-2 border-neutral-800">
+
+			<div class="flex justify-between px-6 py-4 md:border-b border-neutral-800">
+				<h2 class="text-lg font-medium">
+					Register
+				</h2>
+				<a class="md:hidden text-sm text-blue-600 hover:underline" (click)="showLoginForm()"> Not Registered?
+				</a>
+			</div>
+
+			<div class="p-2 pt-6">
+
+				<h1 class="text-xl">Igneas Administrators have disabled Registration</h1>
+			</div>
+			<div class="p-6">
+				<h3>This version of Igneas is in a pre-alpha stage and is closed to new members.</h3>
+				<h3>Updates will be made available on <a [href]="discordUrl"
+						class="font-medium text-blue-600 dark:text-blue-500 hover:underline" target="_blank">Discord</a>
+					as soon as we have more information.</h3>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+}
