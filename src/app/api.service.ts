@@ -3,11 +3,14 @@ import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { ApiResponse } from './interfaces/api-response';
 import { CookieService } from 'ngx-cookie-service';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+
+  apiurl = environment.serverUrl;
 
   constructor(private http: HttpClient, private cookieService: CookieService) { }
 
@@ -32,7 +35,7 @@ export class ApiService {
   private post(url: string, data: JSON | FormData, usingFormData = false): Observable<ApiResponse> {
     const headers = this.refreshHeaders(usingFormData);
 
-    return this.http.post(url, data, { headers: headers }).pipe(
+    return this.http.post(this.apiurl + url, data, { headers: headers }).pipe(
       map(response => response as ApiResponse)
     );
 
@@ -42,7 +45,7 @@ export class ApiService {
 
     const headers = this.refreshHeaders(usingFormData);
 
-    return this.http.put(url, data, { headers: headers }).pipe(
+    return this.http.put(this.apiurl + url, data, { headers: headers }).pipe(
       map(response => response as ApiResponse)
     );
 
@@ -52,7 +55,7 @@ export class ApiService {
 
     const headers = this.refreshHeaders(usingFormData);
 
-    return this.http.patch(url, data, { headers: headers }).pipe(
+    return this.http.patch(this.apiurl + url, data, { headers: headers }).pipe(
       map(response => response as ApiResponse)
     );
 
@@ -63,7 +66,7 @@ export class ApiService {
     const headers = this.refreshHeaders();
 
 
-    return this.http.get(url, { headers: headers }).pipe(
+    return this.http.get(this.apiurl + url, { headers: headers }).pipe(
       map(response => response as ApiResponse)
     );
   }
@@ -75,7 +78,7 @@ export class ApiService {
    */
   private delete(url: string) {
     const headers = this.refreshHeaders();
-    return this.http.delete(url, { headers: headers }).pipe(
+    return this.http.delete(this.apiurl + url, { headers: headers }).pipe(
       map(response => response as ApiResponse)
     );
   }

@@ -3,6 +3,7 @@
         production: true,
         disableSignUp: true,
         disableSignIn: false,
+        disableAuthGuard: false,
         discordUrl: 'https://discord.gg/YQvTBPDxf8',
         serverUrl : 'https://api.igneas.app',
         pusher: {
