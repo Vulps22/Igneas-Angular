@@ -1,4 +1,11 @@
 <p-toast></p-toast>
+<div class="px-9">
+<p-messages severity="info">
+  <ng-template pTemplate>
+    <div class="ml-2"><strong>Pre-Alpha</strong>: Igneas is in a <i>closed Pre-Alpha</i> at this time and is not available for public use. Any promised features on this app are subject to change.</div>
+  </ng-template>
+</p-messages>
+</div>
 <div class="flex flex-col h-screen bg-neutral-900 text-white">
 
   @if(isLoggedIn()){
@@ -7,7 +14,7 @@
   @else{
   <app-navbar-guest></app-navbar-guest>
   }
-  <div class="h-100 overflow-x-scroll">
+  <div class="h-screen overflow-y-scroll">
     <main class="flex-grow p-4">
       <router-outlet></router-outlet>
     </main>

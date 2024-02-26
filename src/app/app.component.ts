@@ -4,6 +4,7 @@ import { NavbarGuestComponent } from './navbar/navbar-guest/navbar-guest.compone
 import { CommonModule } from '@angular/common';
 import { NavbarMemberComponent } from './navbar/navbar-member/navbar-member.component';
 import { ToastModule } from 'primeng/toast';
+import { MessagesModule } from 'primeng/messages';
 import { MessageService } from 'primeng/api';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthenticationService } from './authentication.service';
@@ -11,7 +12,7 @@ import { AuthenticationService } from './authentication.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, RouterOutlet, NavbarGuestComponent, NavbarMemberComponent, CommonModule, ToastModule],
+  imports: [RouterLink, RouterLinkActive, RouterOutlet, NavbarGuestComponent, NavbarMemberComponent, CommonModule, ToastModule, MessagesModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

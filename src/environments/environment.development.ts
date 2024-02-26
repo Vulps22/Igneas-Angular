@@ -1,6 +1,6 @@
 export const environment = {
     production: false,
-    disableSignUp: false,
+    disableSignUp: true,
     disableSignIn: false,
     disableAuthGuard: false,
     discordUrl: 'https://discord.gg/YQvTBPDxf8',

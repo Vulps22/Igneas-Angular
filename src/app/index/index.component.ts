@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-index',
@@ -8,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './index.component.css'
 })
 export class IndexComponent {
-
+discordUrl = environment.discordUrl;
+disableSignup = environment.disableSignUp
 }
