@@ -1,26 +1,27 @@
 <p-toast></p-toast>
-<div class="px-9">
-<p-messages severity="info">
-  <ng-template pTemplate>
-    <div class="ml-2"><strong>Pre-Alpha</strong>: Igneas is in a <i>closed Pre-Alpha</i> at this time and is not available for public use. Any promised features on this app are subject to change.</div>
-  </ng-template>
-</p-messages>
-</div>
 <div class="flex flex-col h-screen bg-neutral-900 text-white">
+  <div class="px-9">
+    <p-messages severity="info" [closable]="true">
+      <ng-template pTemplate>
+        <div class="ml-2"><strong>Pre-Alpha</strong>: <span class="hidden md:inline-block">Igneas is in a <i>closed Pre-Alpha</i> at this time and is not
+          available for public use.</span> Any promised features on this app are subject to change.</div>
+      </ng-template>
+    </p-messages>
+  </div>
 
-  @if(isLoggedIn()){
-  <app-navbar-member></app-navbar-member>
-  }
-  @else{
-  <app-navbar-guest></app-navbar-guest>
-  }
-  <div class="h-screen overflow-y-scroll">
-    <main class="flex-grow p-4">
-      <router-outlet></router-outlet>
-    </main>
+  <header>
+    @if(isLoggedIn()){
+    <app-navbar-member></app-navbar-member>
+    }
+    @else{
+    <app-navbar-guest></app-navbar-guest>
+    }
+  </header>
+  <div class="flex-grow overflow-y-scroll overflow-x-hidden">
+    <router-outlet></router-outlet>
 
-    <footer class="p-4 text-center text-gray-300">
-      &copy; Dating App 2024
+    <footer class="fixed-bottom p-4 text-center text-gray-300">
+      &copy; Igneas 2024
     </footer>
   </div>
 </div>

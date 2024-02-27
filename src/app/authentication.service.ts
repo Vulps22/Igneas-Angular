@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
-import { Observable, tap } from 'rxjs';
+import { Observable, map, tap } from 'rxjs';
 import { ApiResponse } from './interfaces/api-response';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -50,6 +50,24 @@ export class AuthenticationService {
     this.cookieService.set('authentication', token, 30, undefined, undefined, true);
 
   }
+
+
+logout(): Observable<boolean> {
+
+  return this.apiService.auth.destroy().pipe(
+    map(data => {
+      if (data.response === 'success') {
+        this.forgetToken();
+        this.loggedIn = false;
+        this.userId = null;
+        return true; // Logout was successful
+      } else {
+        return false; // Logout failed
+      }
+    })
+  );
+}
+
 
   /**
    * remove the token from the cookies

@@ -16,6 +16,7 @@ export class ApiService {
 
   auth = {
     verify: () => { return this.get('/api/auth/verify') },
+    destroy: () => { return this.delete('/api/auth/destroy') },
   };
   user = {
     login: (data: any) => { return this.post('/api/user/login', data) },
@@ -29,7 +30,7 @@ export class ApiService {
     deleteUserProfileImage: (position: number) => { return this.delete(`/api/profile/delete_profile_image?position=${position}`) },
 
   };
-  
+
   messenger = [];
 
   private post(url: string, data: JSON | FormData, usingFormData = false): Observable<ApiResponse> {
@@ -90,7 +91,7 @@ export class ApiService {
     let headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
-    if(!usingFormData) headers = headers.append( 'Content-Type', 'application/json')
+    if (!usingFormData) headers = headers.append('Content-Type', 'application/json')
     return headers
   }
 
