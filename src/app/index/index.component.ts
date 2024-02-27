@@ -15,6 +15,11 @@ export class IndexComponent {
   discordUrl = environment.discordUrl;
   disableSignup = environment.disableSignUp
 
+
+  openDiscord(){
+    window.location.href = this.discordUrl
+  }
+
   features = {
     'free': [
       'Access up to 100 profiles on The Grid',

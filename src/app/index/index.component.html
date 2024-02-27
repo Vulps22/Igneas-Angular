@@ -9,7 +9,7 @@
 				<p class="mt-0 mb-4 text-700 line-height-3">Join the Online Dating Revolution.</p>
 				<button pButton pRipple label="Join the Discord" icon="pi pi-discord"
 					class="font-bold px-5 py-3 mr-5 bg-blue-700 p-button-raised p-button-rounded white-space-nowrap"
-					[routerLink]="discordUrl"></button>
+					(click)="openDiscord()"></button>
 
 			</section>
 		</div>
@@ -164,7 +164,7 @@
         <div class="text-700 text-2xl mb-5">Stay up-to-date with the latest news and developments, Alpha and Beta releases and use your voice to shape the future of Igneas!</div>
         <button pButton pRipple label="Join the Discord" icon="pi pi-discord"
 					class="font-bold px-5 py-3 mr-5 bg-blue-700 p-button-raised p-button-rounded white-space-nowrap"
-					[routerLink]="discordUrl"></button>
+					(click)="openDiscord()"></button>
     </div>
 </div>
 </section>
