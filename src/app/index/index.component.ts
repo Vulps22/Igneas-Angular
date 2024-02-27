@@ -59,19 +59,19 @@ export class IndexComponent {
       icon: 'filter',
       useFa: false,
       title: 'Advanced Filtering',
-      value: 'You will only ever see people who match what you\'re looking for, and only if you match what they\'re looking for! <br> Our Advanced Filtering Algorithm does the matching before you even see anyone!'
+      value: 'You will only ever see people who match what you\'re looking for, and only if you match what they\'re looking for! Our Advanced Filtering Algorithm does the matching before you even see anyone!'
     },
     {
       icon: 'shield',
       useFa: false,
       title: 'Safety First',
-      value: 'With opt-in image sending in DM\'s, Trustworthiness-ratings, and 3rd-party Identity (and Age) Verification, Igneas has been designed from the beginning with your safety in mind'
+      value: 'With opt-in image sending in DMs, trustworthiness ratings, and third-party identity and age verification. Igneas has been designed from the beginning with your safety in mind.'
     },
     {
       icon: 'people-group',
       useFa: true,
       title: 'More Than Just A Dating App',
-      value: 'Igneas\' filters allow you to choose what you\'re looking for, whether you want something long term, a friend to got for a pint with at the weekend, or something more immediate 😉. Igneas will show you exactly what you want.'
+      value: 'Igneas\' filters allow you to choose what you\'re looking for, whether you want something long term, a friend to go for a pint with at the weekend, or something more immediate. Igneas will show you exactly what you want.'
     },
     {
       icon: 'car',
