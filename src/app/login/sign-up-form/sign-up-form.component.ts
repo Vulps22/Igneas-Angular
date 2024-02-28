@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { ApiService } from '../../api.service';
+import { ApiService } from '../../services/api/api.service';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { ToastModule } from 'primeng/toast';
-import { NotificationService } from '../../notification.service';
-import { AuthenticationService } from '../../authentication.service';
+import { NotificationService } from '../../services/notification/notification.service';
+import { AuthenticationService } from '../../services/authentication/authentication.service';
 import { ApiResponse } from '../../interfaces/api-response';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ShortUser } from '../../interfaces/short-user';
+import { ShortProfile } from '../../interfaces/user.interface';
 import { RouterLink } from '@angular/router';
 @Component({
   selector: 'grid-square',
@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './square.component.css'
 })
 export class SquareComponent {
-  @Input() user: ShortUser = {
+  @Input() user: ShortProfile = {
     user_id: 0,
     display_name: '',
     age: 0,

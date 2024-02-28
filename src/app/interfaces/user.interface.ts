@@ -1,5 +1,12 @@
-import { Image } from "./image";
-import { Health } from "./health";
+export interface ShortProfile {
+    user_id: Number;
+    display_name: String;
+    age: Number;
+    image: string;
+    show_location: boolean;
+    distance: String;
+}
+
 export interface Profile {
     user_id: number;
     display_name: string;
@@ -23,3 +30,17 @@ export interface Profile {
     health: Health;
     distance: string;
 }
+
+export interface Health {
+    user_id: number; 
+    show_hiv_status: boolean;
+    hiv_status: string;
+    last_test: string;
+    on_prep: boolean | null;
+  }
+  
+
+  export interface Image {
+    id: number;
+    filename: string; 
+  }

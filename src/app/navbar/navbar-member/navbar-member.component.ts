@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { AuthenticationService } from '../../authentication.service';
-import { NotificationService } from '../../notification.service';
+import { AuthenticationService } from '../../services/authentication/authentication.service';
+import { NotificationService } from '../../services/notification/notification.service';
 
 @Component({
   selector: 'app-navbar-member',

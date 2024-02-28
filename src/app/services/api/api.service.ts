@@ -1,9 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { ApiResponse } from './interfaces/api-response';
+import { ApiResponse } from '../../interfaces/api-response';
 import { CookieService } from 'ngx-cookie-service';
-import { environment } from '../environments/environment';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'

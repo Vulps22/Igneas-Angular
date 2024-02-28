@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileEditorPhotoCardComponent } from './profile-editor-photo-card/profile-editor-photo-card.component';
-import { ApiService } from '../../api.service';
-import { AuthenticationService } from '../../authentication.service';
-import { NotificationService } from '../../notification.service';
+import { ApiService } from '../../services/api/api.service';
+import { AuthenticationService } from '../../services/authentication/authentication.service';
+import { NotificationService } from '../../services/notification/notification.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Profile } from '../../interfaces/profile';
-import { Image } from '../../interfaces/image';
+import { Profile, Image } from '../../interfaces/user.interface';
 import { DatePipe } from '@angular/common';
 
 @Component({

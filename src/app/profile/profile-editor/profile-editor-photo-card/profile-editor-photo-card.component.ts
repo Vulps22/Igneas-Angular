@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ApiService } from '../../../api.service';
-import { NotificationService } from '../../../notification.service';
+import { ApiService } from '../../../services/api/api.service';
+import { NotificationService } from '../../../services/notification/notification.service';
 
 @Component({
   selector: 'app-profile-editor-photo-card',

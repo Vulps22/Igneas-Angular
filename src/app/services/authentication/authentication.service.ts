@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ApiService } from './api.service';
+import { ApiService } from '../api/api.service';
 import { Observable, map, tap } from 'rxjs';
-import { ApiResponse } from './interfaces/api-response';
+import { ApiResponse } from '../../interfaces/api-response';
 import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({

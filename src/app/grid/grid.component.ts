@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
-import { ShortUser } from '../interfaces/short-user'
+import { ApiService } from '../services/api/api.service';
 import { SquareComponent } from "./square/square.component";
+import { ShortProfile } from '../interfaces/user.interface';
 
 @Component({
     selector: 'app-grid',
@@ -12,7 +12,7 @@ import { SquareComponent } from "./square/square.component";
 })
 export class GridComponent implements OnInit {
 
-  users: ShortUser[] = []
+  users: ShortProfile[] = []
   hasLoaded = false;
 
   constructor(private apiService: ApiService) { }
@@ -20,7 +20,7 @@ export class GridComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.profile.list().subscribe(data => {
       if (data.response === 'success') {
-        this.users = data.data.map((user: any) => user as ShortUser);
+        this.users = data.data.map((user: any) => user as ShortProfile);
         this.hasLoaded = true;
       }
     })

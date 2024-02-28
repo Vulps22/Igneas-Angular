@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileItemComponent } from '../profile-item/profile-item.component';
-import { ApiService } from '../../api.service';
+import { ApiService } from '../../services/api/api.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({

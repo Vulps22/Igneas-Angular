@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ApiService } from '../../api.service';
+import { ApiService } from '../../services/api/api.service';
 import { ApiResponse } from '../../interfaces/api-response';
 import { CookieService } from 'ngx-cookie-service';
-import { NotificationService } from '../../notification.service';
-import { AuthenticationService } from '../../authentication.service';
+import { NotificationService } from '../../services/notification/notification.service';
+import { AuthenticationService } from '../../services/authentication/authentication.service';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 
